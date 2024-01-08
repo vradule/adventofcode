@@ -15,8 +15,8 @@ def sum_first_lasts_numbers(docs):
     return res
 
 def get_docs(file_name):
-    file = open(file_name, "r")
-    return file.read().split('\n')
+    file = open(file_name)
+    return file.readlines()
 
 docs = get_docs("example1.txt")
 assert(find_first_last_number(docs[0]) == 12)

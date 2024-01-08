@@ -1,6 +1,6 @@
 def get_input(file_name):
-    file = open(file_name, "r")
-    return file.read().split("\n")
+    file = open(file_name)
+    return file.readlines()
 
 
 def explore(grid, R, C, r, c):
