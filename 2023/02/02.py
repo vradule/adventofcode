@@ -27,7 +27,7 @@ def sum_of_possible(games):
     return sum
 
 
-games = get_input("example1.txt")
+games = get_input("example.txt")
 assert is_possible(games[0]) == True
 assert is_possible(games[1]) == True
 assert is_possible(games[2]) == False
@@ -62,7 +62,7 @@ def sum_of_fewest_power(games):
     return sum
 
 
-games = get_input("example1.txt")
+games = get_input("example.txt")
 assert fewest_power(games[0]) == 48
 assert fewest_power(games[1]) == 12
 assert fewest_power(games[2]) == 1560
