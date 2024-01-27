@@ -1,9 +1,7 @@
 import tkinter
 import random
-
-krajIgre = False
-rezultat = 0
-kvadratiZaOcistiti = 0
+krajIgre = False 
+KvadratiZaOcistiti = 0
 
 
 def igraj_izbegniteMine():
@@ -11,25 +9,24 @@ def igraj_izbegniteMine():
     prozor = tkinter.TK()
     raspored_prozor(prozor)
     prozor.mainloop()
+    
 
-    minskoPolje = []
+minskoPolje = []
 
 
 def napravi_minskoPolje(minskoPolje):
-    
-
-
-def raspored_prozor(prozor):
-    for redBroj, redLista in enumerate(minskoPolje):
-        for kolonaBroj, kolonaUnos in enumerate(redLista):
-            if random.randint(1, 100) < 25:
-                kvadrat = tkinter.Label(prozor, text="    ", bg="darkgreen")
-            elif random.randint(1, 100) > 75:
-                kvadrat = tkinter.Label(prozor, text="    ", bg="seagreen")
-            else:
-                kvadrat = tkinter.Label(prozor, text="    ", bg="green")
-            kvadrat.grid(row=redBroj, column=kolonaBroj)
-            igraj_izbegniteMine()
-
-
-igraj_izbegniteMine()
+    global KvadratiZaOcistiti
+    for red in range (0,10):
+        redLista = []
+        for kolona in range(0,10):
+             if random.randint(1,100) < 20:
+                redLista.append(1)
+        else: 
+                redLista.append(0)
+                KvadratiZaOcistiti = KvadratiZaOcistiti + 1
+        minskoPolje.append(redLista)
+    #stampajPolje(minskoPolje)
+def stampajPolje(minskoPolje):
+     for redLista in minskoPolje:
+          print(redLista)
+igraj_izbegniteMine                           
